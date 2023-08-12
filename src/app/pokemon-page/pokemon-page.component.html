@@ -1,0 +1,149 @@
+<div
+  class="main"
+  [style.backgroundColor]="
+    getTypeColor(pokemon?.types?.at(0)?.type?.name ?? '')
+  "
+>
+  <header class="header">
+    <button
+      mat-icon-button
+      [style.backgroundColor]="
+        getTypeColor(pokemon?.types?.at(0)?.type?.name ?? '')
+      "
+      class="back-button"
+      routerLink="/"
+    >
+      <mat-icon color="white">arrow_back</mat-icon>
+    </button>
+  </header>
+
+  <div
+    class="image-container"
+    [style.backgroundImage]="
+      'url(\'assets/type-icons/' + pokemon?.types?.at(0)?.type?.name + '.svg\')'
+    "
+  >
+    <img
+      [src]="pokemon?.sprites?.other?.['official-artwork']?.front_default"
+      class="pokemon-image"
+    />
+  </div>
+  <div class="details">
+    <div class="banner">
+      <div>
+        <h1 class="pokemon-name">
+          {{ pokemon?.name }}
+          <span class="pokemon-id">#{{ pokemon?.id }}</span>
+        </h1>
+
+        <span class="type-container">
+          <span
+            class="type"
+            *ngFor="let type of pokemon?.types"
+            [style.backgroundColor]="getTypeColor(type.type.name)"
+            ><img
+              [src]="'assets/type-icons/' + type.type.name + '.svg'"
+              class="pokemon-type"
+            />
+            <span class="type-name">
+              {{ type.type.name }}
+            </span>
+          </span>
+        </span>
+      </div>
+    </div>
+    <div class="description-container">
+      <p class="description">{{ description }}</p>
+      <button
+        mat-icon-button
+        class="fact-refresh"
+        [style.color]="getTypeColor(pokemon?.types?.at(0)?.type?.name ?? '')"
+        (click)="randomFact()"
+      >
+        <mat-icon>refresh</mat-icon>
+      </button>
+    </div>
+    <div class="tab-container">
+      <span
+        matRipple
+        [matRippleColor]="color"
+        class="tab"
+        (click)="setTab('stats')"
+        [style.backgroundColor]="
+          tab === 'stats'
+            ? getTypeColor(pokemon?.types?.at(0)?.type?.name ?? '')
+            : ''
+        "
+        [style.color]="
+          tab === 'stats'
+            ? 'white'
+            : getTypeColor(pokemon?.types?.at(0)?.type?.name ?? '')
+        "
+        >Stats</span
+      >
+      <span
+        matRipple
+        [matRippleColor]="color"
+        class="tab"
+        (click)="setTab('evolution')"
+        [style.backgroundColor]="
+          tab === 'evolution'
+            ? getTypeColor(pokemon?.types?.at(0)?.type?.name ?? '')
+            : ''
+        "
+        [style.color]="
+          tab === 'evolution'
+            ? 'white'
+            : getTypeColor(pokemon?.types?.at(0)?.type?.name ?? '')
+        "
+        >Evolution</span
+      >
+      <span
+        matRipple
+        [matRippleColor]="color"
+        class="tab"
+        (click)="setTab('moves')"
+        [style.backgroundColor]="
+          tab === 'moves'
+            ? getTypeColor(pokemon?.types?.at(0)?.type?.name ?? '')
+            : ''
+        "
+        [style.color]="
+          tab === 'moves'
+            ? 'white'
+            : getTypeColor(pokemon?.types?.at(0)?.type?.name ?? '')
+        "
+        >Moves</span
+      >
+    </div>
+
+    <div *ngIf="tab === 'stats'" class="stats-container">
+      <div *ngFor="let stats of pokemon?.stats" class="base-stat">
+        <p
+          class="stat-name"
+          [style.color]="getTypeColor(pokemon?.types?.at(0)?.type?.name ?? '')"
+        >
+          {{ shorten(stats.stat.name) }}
+        </p>
+        <span class="stat-value"> {{ stats.base_stat }} </span>
+        <span class="progress-bar-container">
+          <app-progress-bar [attack]="stats.base_stat" />
+        </span>
+      </div>
+      <div class="weakness" *ngIf="types">
+        <app-weakness [types]="types" />
+      </div>
+      <div class="ability" *ngIf="pokemon">
+        <h1 class="ability-title" [style.color]="getTypeColor(pokemon.types[0].type.name)">
+          Abilities
+        </h1>
+        <app-ability
+          *ngFor="let ability of pokemon.abilities"
+          [ability]="ability.ability.name"
+          [hidden]="ability.is_hidden"
+          [color]="getTypeColor(pokemon?.types?.at(0)?.type?.name ?? '')"
+        />
+      </div>
+    </div>
+  </div>
+</div>

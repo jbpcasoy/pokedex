@@ -1,0 +1,65 @@
+.type-image {
+  width: 1rem;
+  height: 1rem;
+}
+
+.type {
+  display: inline-flex;
+  border-radius: 100%;
+  padding: 0.5rem;
+}
+
+.type-container {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 5rem;
+  padding: 0.3rem;
+}
+
+.weakness-container {
+  display: grid;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (max-width: 767px) {
+  .weakness-container {
+    grid-template-columns: repeat(
+      3,
+      1fr
+    ); /* Change the number of columns as needed */
+    grid-template-rows: repeat(
+      6,
+      1fr
+    ); /* Change the number of rows as needed */
+    width: 15rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .weakness-container {
+    grid-template-columns: repeat(
+      6,
+      1fr
+    ); /* Change the number of columns as needed */
+    grid-template-rows: repeat(
+      3,
+      1fr
+    ); /* Change the number of rows as needed */
+    width: 30rem;
+  }
+}
+
+.weakness-value {
+  width: 3rem;
+  padding-left: .5rem;
+}
+
+.title {
+  text-align: center;
+  font-size: medium;
+  margin: 0;
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+}

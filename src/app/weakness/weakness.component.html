@@ -1,0 +1,12 @@
+<h1 class="title" [style.color]="getTypeColor(types[0])">Weaknesses</h1>
+<div class="weakness-container">
+  <div class="type-container" *ngFor="let typeName of typeNames">
+    <div class="type" [style.backgroundColor]="getTypeColor(typeName)">
+      <img
+        class="type-image"
+        [src]="'assets/type-icons/' + typeName + '.svg'"
+      />
+    </div>
+    <span class="weakness-value">{{ typeWeaknesses[typeName] }}x</span>
+  </div>
+</div>

@@ -1,0 +1,47 @@
+.pokemon-container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+
+.action-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.navigation-button {
+  margin: 0.1rem;
+  font-size: xx-small;
+}
+
+.main {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header {
+  padding: 1rem;
+  font-weight: bold;
+  background-color: rgba(256, 256, 256, 0.9);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.title {
+  margin: 0;
+  vertical-align: middle;
+}

@@ -1,0 +1,27 @@
+.main {
+  margin-bottom: 0.5rem;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer {
+  text-align: center;
+  // padding: 1rem;
+  font-size: xx-small;
+}
+
+.header {
+  position: absolute;
+  top: 0;
+}
+
+.navigation-button {
+  font-size: xx-small;
+  // color: white;
+}

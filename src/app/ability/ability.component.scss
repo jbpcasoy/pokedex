@@ -1,0 +1,24 @@
+.ability-name {
+  font-size: small;
+  text-transform: capitalize;
+  text-align: center;
+  margin: 0;
+}
+
+.ability-effect {
+  text-align: left;
+  font-size: smaller;
+  margin: 0;
+}
+
+.hidden {
+  font-size: 1.5rem;
+  margin-left: .5rem;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
+}

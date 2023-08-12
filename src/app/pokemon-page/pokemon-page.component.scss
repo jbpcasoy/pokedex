@@ -1,0 +1,163 @@
+.banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.details {
+  padding: 0.5rem;
+  padding-top: 2rem;
+  background-color: #ffffff;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+.pokemon-id {
+  text-align: center;
+  margin: 0;
+  font-size: small;
+  vertical-align: middle;
+  margin-left: 1rem;
+  // color: #f9f9f9;
+}
+
+.pokemon-name {
+  margin: 0;
+  text-transform: capitalize;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pokemon-type {
+  width: 1rem;
+  margin-right: 0.1rem;
+}
+
+.type-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.description-container {
+  display: flex;
+  align-items: center;
+}
+
+.description {
+  margin: 0;
+  flex: 1;
+  text-align: center;
+  font-size: smaller;
+}
+
+.type {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.2rem;
+  border-radius: 0.5rem;
+  margin-right: 0.3rem;
+}
+
+.type-name {
+  vertical-align: middle;
+  color: white;
+}
+
+.pokemon-image {
+  width: 15rem;
+  margin-bottom: -3rem;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  min-height: 10rem;
+  padding-top: 1rem;
+}
+
+.tab-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.tab {
+  padding: 0.3rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  user-select: none;
+  touch-action: none;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.back-button {
+  color: white;
+  margin: .2rem;
+}
+
+.stat-name {
+  min-width: 3rem;
+  display: inline-block;
+  margin: 0;
+}
+
+.progress-bar-container {
+  flex: 1;
+}
+
+.base-stat {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (max-width: 767px) {
+  .base-stat {
+    max-width: 95%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .base-stat {
+    max-width: 40rem;
+  }
+}
+
+.stat-value {
+  min-width: 2rem;
+}
+
+.stats-container {
+  margin-top: 1rem;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.main {
+  border: 1px solid white;
+}
+
+.ability-title {
+  text-align: center;
+  font-size: medium;
+  margin: 0;
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+}

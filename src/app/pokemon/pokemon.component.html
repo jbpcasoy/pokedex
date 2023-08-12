@@ -1,0 +1,48 @@
+<mat-card
+  class="pokemon-card"
+  [style.backgroundColor]="
+    getTypeColor(pokemon?.types?.at(0)?.type?.name ?? '')
+  "
+  matRipple
+  [matRippleColor]="getTypeColor(pokemon?.types?.at(0)?.type?.name ?? '')"
+  (click)="openDetails()"
+>
+  <div class="main-grid">
+    <div class="pokemon-image-container">
+      <div
+        [style.backgroundImage]="
+          'url(\'assets/type-icons/' +
+          pokemon?.types?.at(0)?.type?.name +
+          '.svg\')'
+        "
+        class="pokemon-image-container"
+      >
+        <img
+          class="pokemon-image"
+          [src]="pokemon?.sprites?.other?.['official-artwork']?.front_default"
+        />
+      </div>
+    </div>
+    <div class="summary">
+      <div>
+        <mat-card-title>
+          <span class="pokemon-name">
+            {{ pokemon?.name }}
+          </span>
+        </mat-card-title>
+        <mat-card-subtitle>
+          <span class="pokemon-id">#{{ pokemon?.id }}</span>
+        </mat-card-subtitle>
+      </div>
+    </div>
+    <div class="subtitle">
+      <span class="type-container"
+        ><img
+          [src]="'assets/type-icons/' + type.type.name + '.svg'"
+          class="pokemon-type"
+          *ngFor="let type of pokemon?.types"
+          [title]="type.type.name"
+      /></span>
+    </div>
+  </div>
+</mat-card>

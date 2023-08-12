@@ -1,0 +1,7 @@
+<div class="title">
+  <h2 class="ability-name" [style.color]="color">
+    {{ pokemonAbility?.name }}
+  </h2>
+  <mat-icon *ngIf="hidden" [style.color]="color" class="hidden" title="hidden">visibility_off</mat-icon>
+</div>
+<p class="ability-effect">{{ effect }}</p>
